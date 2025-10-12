@@ -85,7 +85,7 @@ const Links = () => {
                   {c.copy && (
                     <CopyButton
                       onClick={() => {
-                        window.location.href = "tel:+79204281777";
+                        window.location.href = c.copy;
                       }}
                       title="Скопировать номер"
                     >

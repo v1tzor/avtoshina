@@ -23,7 +23,7 @@ const allLinks = [
     {
         leadIcon: "/phone.svg",
         title: '+7 (920) 428-17-77 — Андрей',
-        copy: "+7 (920) 428-17-77",
+        copy: "tel:+79204281777",
         type: 'contacts',
         on: true
     },
