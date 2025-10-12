@@ -21,6 +21,13 @@ const allLinks = [
         on: true
     },
     {
+        title: 'Email',
+        url: 'mailto:sulimavto@yandex.ru',
+        type: 'social',
+        icon: '/email.svg',
+        on: true
+    },
+    {
         leadIcon: "/phone.svg",
         title: '+7 (920) 428-17-77 — Андрей',
         copy: "tel:+79204281777",
