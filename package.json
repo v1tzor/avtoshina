@@ -1,8 +1,8 @@
 {
-  "name": "appwrite-links",
+  "name": "avtoshina",
   "version": "0.1.0",
-  "description": "Design Wizard",
-  "author": "realvjy",
+  "description": "Magazine avtoshina",
+  "author": "v1tzor",
   "license": "MIT",
   "private": true,
   "scripts": {

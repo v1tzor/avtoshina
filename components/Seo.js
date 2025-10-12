@@ -25,25 +25,13 @@ export default function Seo({ page }) {
                             alt: `${title}`,
                         },
                     ],
-                    site_name: 'vjy.me',
-                }}
-                twitter={{
-                    handle: '@realvjy',
-                    site: 'vjy.me',
-                    cardType: 'summary_large_image',
+                    site_name: 'avtoshina',
                 }}
                 additionalMetaTags={[{
                     name: 'keywords',
                     content: `${seoData.openGraph.keywords}`
                 },
-                {
-                    name: 'twitter:image',
-                    content: `${seoData.openGraph.images[0].url}`
-                },
-                {
-                    httpEquiv: 'x-ua-compatible',
-                    content: 'IE=edge; chrome=1'
-                }]}
+               ]}
                 robotsProps={{
                     nosnippet: false,
                     notranslate: true,
