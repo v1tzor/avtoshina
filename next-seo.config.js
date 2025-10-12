@@ -1,11 +1,10 @@
 export default {
     openGraph: {
         type: 'website',
-        locale: 'ru',
         title: 'Avtoshina',
-        url: 'https://vk.com/club229635905',
-        description: 'Авто магазин и шиномотажный сервис «АВТОШИНА»',
-        locale: 'ru',
+        url: 'https://avtoshina36.ru',
+        description: 'Автомагазин и шиномотажный сервис «АВТОШИНА»',
+        locale: 'ru_RU',
         keywords: 'шины, диски, запчасти, литые диски, шиномонтаж, аккумуляторы, масла, ремонт, россошь',
         images: [
             {

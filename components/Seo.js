@@ -16,7 +16,7 @@ export default function Seo({ page }) {
                     url: `${seoData.openGraph.url}`,
                     title: `${title}`,
                     description: `${seoData.openGraph.description}`,
-                    locale: 'ru',
+                    locale: 'ru_RU',
                     images: [
                         {
                             width: 1200,
