@@ -1,24 +1,19 @@
 export default {
     openGraph: {
         type: 'website',
-        locale: 'en_IE',
-        title: 'next lnks by realvjy',
-        url: 'https://vjy.me',
-        description: 'Custom bio links for creatives who love coding. Made this first to use for my own weblinks vjy.me/lnk.',
-        locale: 'en_EN',
-        keywords: 'designer, product designer, illustrator, indian designer, vijay verma, realvjy, illlustrations, indian illustrator, ui designer india, sushi design system, zomato designer, 3dicons, uiprint, vijay realvjy, indian ui designer, design india, overlayz, nft art',
+        locale: 'ru',
+        title: 'Avtoshina',
+        url: 'https://vk.com/club229635905',
+        description: 'Авто магазин и шиномотажный сервис «АВТОШИНА»',
+        locale: 'ru',
+        keywords: 'шины, диски, запчасти, литые диски, шиномонтаж, аккумуляторы, масла, ремонт, россошь',
         images: [
             {
                 width: 1200,
                 height: 630,
-                url: `https://vjy.me/preview.jpg`,
+                url: `/banner.jpg`,
             },
         ],
-        site_name: 'realvjy',
-    },
-    twitter: {
-        handle: '@realvjy',
-        site: 'vjy.me',
-        cardType: 'summary_large_image',
+        site_name: 'Автошина',
     },
 };

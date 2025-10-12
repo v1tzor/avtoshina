@@ -1,20 +1,16 @@
-// date: 1 Aug, 2022
 const bioData = [
     {
-        name: 'John Doe',
+        name: '«АВТОШИНА»',
         titleImg: false,
         avatar: null,
         nftAvatar: false,
         useAvatarIcon: true,
-        description: 'Your bio description here',
+        description: 'Автомагазин и шиномотажный сервис',
         descShow: true,
-        subdesc: 'Optional sub description',
-        subdescShow: false,
-        newProduct: true,
+        subdesc: 'Всегда к вашим услугам!',
+        subdescShow: true,
+        newProduct: false,
         newProductUrl: '#',
-        footerText: 'made by',
-        author: 'realvjy',
-        authorURL: 'https://twitter.com/realvjy',
     },
 ];
 
