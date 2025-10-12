@@ -40,7 +40,12 @@ const Links = () => {
             <LinkSection className="social">
               <div className="iconsonly">
                 {social.map((i) => (
-                  <a href={i.url} key={i.title} target="_blank" rel="noreferrer">
+                  <a
+                    href={i.url}
+                    key={i.title}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <SocialLinkBox className="socialIcon">
                       <img src={i.icon} alt={i.title} />
                     </SocialLinkBox>
@@ -75,6 +80,18 @@ const Links = () => {
                       </a>
                     )}
                   </LinkTitle>
+
+                  {/* --- Новая кнопка копирования --- */}
+                  {c.copy && (
+                    <CopyButton
+                      onClick={() => {
+                        window.location.href = "tel:+79204281777";
+                      }}
+                      title="Скопировать номер"
+                    >
+                      <img src="/share.png" alt="copy" />
+                    </CopyButton>
+                  )}
                 </LinkBox>
               ))}
             </LinkSection>
@@ -211,9 +228,7 @@ const LinkBox = styled.div`
   margin: 8px 0;
   border: 1px solid
     ${({ theme }) =>
-      theme.name === "dark"
-        ? "rgba(255, 255, 255, 0.2)"
-        : theme.bg.secondary};
+      theme.name === "dark" ? "rgba(255, 255, 255, 0.2)" : theme.bg.secondary};
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -221,9 +236,7 @@ const LinkBox = styled.div`
   font-size: 16px;
   font-weight: 600;
   background: ${({ theme }) =>
-    theme.name === "dark"
-      ? "rgba(255, 255, 255, 0.05)"
-      : "transparent"};
+    theme.name === "dark" ? "rgba(255, 255, 255, 0.05)" : "transparent"};
   color: ${({ theme }) =>
     theme.name === "dark" ? "var(--color-neutral-100)" : "inherit"};
   transition: all 0.25s ease;
@@ -237,81 +250,96 @@ const LinkBox = styled.div`
 `;
 
 const SocialLinkBox = styled.div`
-    padding: 18px 20px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin: 8px 18px;
+  border: 1px solid
+    ${({ theme }) =>
+      theme.name === "dark" ? "rgba(255, 255, 255, 0.2)" : theme.bg.secondary};
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-align: center;
+  color: ${({ theme }) =>
+    theme.name === "dark" ? "var(--color-neutral-100)" : "inherit"};
+  background: ${({ theme }) =>
+    theme.name === "dark" ? "rgba(255, 255, 255, 0.05)" : "transparent"};
+
+  &::before {
+    content: "";
     border-radius: 12px;
-    margin: 8px 18px;
-    border: 1px solid ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.2)' : theme.bg.secondary};
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -.5px;
-    position: relative;
-    text-align: center;
-    color: ${({ theme }) => theme.name === 'dark' ? 'var(--color-neutral-100)' : 'inherit'};
-    background: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'transparent'};
-    
-    &::before{
-      content: "";
-      border-radius: 12px;
-      display: block;
-      position: absolute;
-      z-index: -1;
-      inset: -2px;
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    &:hover{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  &:hover {
+    transition: all 333ms ease 0s;
+    border-color: ${({ theme }) =>
+      theme.name === "dark" ? "rgba(255, 255, 255, 0.3)" : "transparent"};
+    background: ${({ theme }) =>
+      theme.name === "dark" ? "rgba(255, 255, 255, 0.1)" : "transparent"};
+    &::before {
+      opacity: 1;
+      background: ${({ theme }) =>
+        theme.name === "dark" ? "rgba(255, 255, 255, 0.15)" : theme.bg.hover};
       transition: all 333ms ease 0s;
-      border-color: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.3)' : 'transparent'};
-      background: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'transparent'};
-      &::before{
-        opacity: 1;
-        background: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.15)' : theme.bg.hover};
-        transition: all 333ms ease 0s;
-        transform: scale(1);
-      }
+      transform: scale(1);
     }
-    
-    &.socialIcon {
-      padding: 12px;
-      border-radius: 50%;
-      border: none;
-      margin: 4px;
-      background: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'};
-      
-      img {
-        height: 20px;
-        filter: ${({ theme }) => theme.name === 'dark' ? 'invert(1) brightness(100%)' : 'none'};
-      }
-      
-      &:hover {
-        background: ${({ theme }) => theme.name === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'};
-      }
-      
-      @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}) {
-        padding: 8px;
-        margin: 2px;
-        img {
-          height: 16px;
-        }
-      }
+  }
+
+  &.socialIcon {
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    margin: 4px;
+    background: ${({ theme }) =>
+      theme.name === "dark"
+        ? "rgba(255, 255, 255, 0.1)"
+        : "rgba(0, 0, 0, 0.05)"};
+
+    img {
+      height: 20px;
+      filter: ${({ theme }) =>
+        theme.name === "dark" ? "invert(1) brightness(100%)" : "none"};
+    }
+
+    &:hover {
+      background: ${({ theme }) =>
+        theme.name === "dark"
+          ? "rgba(255, 255, 255, 0.2)"
+          : "rgba(0, 0, 0, 0.1)"};
     }
 
     @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}) {
-      padding: 16px 18px;
-      font-size: 15px;
+      padding: 8px;
+      margin: 2px;
+      img {
+        height: 16px;
+      }
     }
+  }
 
-    .icon-external-link {
-      font-size: 20px;
-      opacity: 0.7;
-      color: ${({ theme }) => theme.name === 'dark' ? 'var(--color-neutral-100)' : 'inherit'};
-    }
-`
+  @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}) {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .icon-external-link {
+    font-size: 20px;
+    opacity: 0.7;
+    color: ${({ theme }) =>
+      theme.name === "dark" ? "var(--color-neutral-100)" : "inherit"};
+  }
+`;
 
 const LeadIcon = styled.div`
   width: 24px;
@@ -323,8 +351,7 @@ const LeadIcon = styled.div`
   img {
     width: 18px;
     height: 18px;
-    filter: ${({ theme }) =>
-      theme.name === "dark" ? "invert(1)" : "none"};
+    filter: ${({ theme }) => (theme.name === "dark" ? "invert(1)" : "none")};
     opacity: 0.9;
   }
 `;
@@ -340,6 +367,43 @@ const LinkTitle = styled.div`
   }
 `;
 
+const CopyButton = styled.button`
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+
+  img {
+    width: 18px;
+    height: 18px;
+    filter: ${({ theme }) =>
+      theme.name === "dark" ? "invert(1)" : "none"};
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    background: ${({ theme }) =>
+      theme.name === "dark"
+        ? "rgba(255,255,255,0.1)"
+        : "rgba(0,0,0,0.05)"};
+    opacity: 1;
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active img {
+    transform: scale(0.95);
+  }
+`;
 
 
 const ThemeToggle = styled.button`
