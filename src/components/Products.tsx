@@ -62,7 +62,7 @@ export function Products() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-            Наш ассортимент
+            Ассортимент
           </h2>
           <p className="text-xl text-blue-500">
             Качественная продукция для вашего автомобиля
