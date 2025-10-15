@@ -1,5 +1,3 @@
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-gray-800/50">
