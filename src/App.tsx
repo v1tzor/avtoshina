@@ -4,6 +4,7 @@ import { Products } from "./components/Products";
 import { Services } from "./components/Services";
 import { Contacts } from "./components/Contacts";
 import { Footer } from "./components/Footer";
+import { Goods } from "./components/Goods";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Hero />
       <Products />
       <Services />
+      <Goods />
       <Contacts />
       <Footer />
     </div>
