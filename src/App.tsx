@@ -5,6 +5,7 @@ import { Services } from "./components/Services";
 import { Contacts } from "./components/Contacts";
 import { Footer } from "./components/Footer";
 import { Goods } from "./components/Goods";
+import { Gallery } from "./components/Gallery";
 import ReactGA from 'react-ga4';
 import { useEffect } from 'react';
 
@@ -21,6 +22,7 @@ export default function App() {
       <Products />
       <Services />
       <Goods />
+      <Gallery />
       <Contacts />
       <Footer />
     </div>

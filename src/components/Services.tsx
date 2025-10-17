@@ -68,9 +68,9 @@ export function Services() {
 
   return (
     <section id="services" className="py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-900/15 to-black"></div>
       
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
@@ -92,8 +92,8 @@ export function Services() {
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="p-5 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl mb-4 shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-110 hover:rotate-6 animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
-                    <Icon size={40} className="text-white" />
+                  <div className="p-4 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-xl mb-4">
+                    <Icon size={40} className="text-blue-400" />
                   </div>
                   <h3 className="text-2xl mb-3 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>{service.title}</h3>
                   <p className="text-gray-400">{service.description}</p>

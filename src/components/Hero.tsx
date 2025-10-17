@@ -24,11 +24,17 @@ export function Hero() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 
-            className={`text-5xl md:text-7xl mb-6 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 bg-clip-text text-transparent transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+           <h1 
+            className={`text-4xl md:text-6xl lg:text-7xl mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
             style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800 }}
           >
-            Продажа и ремонт шин и дисков
+            <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+              Продажа и ремонт
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+              шин и дисков
+            </span>
           </h1>
           <p 
             className={`text-lg md:text-xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}

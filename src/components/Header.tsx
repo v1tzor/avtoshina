@@ -24,11 +24,8 @@ export function Header() {
               className="w-full h-full object-contain"
             />
           </div>
-          <span
-            className="text-gray-100 text-2xl font-bold tracking-wide select-none"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}
-          >
-            Автошина
+          <span className="text-xl tracking-wide bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+            АВТОШИНА
           </span>
         </div>
 
@@ -53,6 +50,13 @@ export function Header() {
               className="relative hover:text-blue-400 transition-all duration-300 group"
             >
               Услуги
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="relative hover:text-blue-400 transition-all duration-300 group"
+            >
+              Фото
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
             </button>
             <button
@@ -93,6 +97,12 @@ export function Header() {
               className="text-left py-3 px-4 hover:bg-blue-500/20 rounded-2xl transition-all duration-300 transform hover:translate-x-2"
             >
               Услуги
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="text-left py-3 px-4 hover:bg-blue-500/20 rounded-2xl transition-all duration-300 transform hover:translate-x-2"
+            >
+              Фото
             </button>
             <button
               onClick={() => scrollToSection("contacts")}

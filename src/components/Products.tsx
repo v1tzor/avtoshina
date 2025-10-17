@@ -56,8 +56,8 @@ export function Products() {
 
   return (
     <section id="products" className="py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black"></div>
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950 to-gray-950"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
@@ -80,9 +80,9 @@ export function Products() {
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-110 hover:rotate-6">
-                    <Icon size={32} className="text-white" />
-                  </div>
+                  <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-xl">
+                      <Icon size={28} className="text-blue-400" />
+                    </div>
                   <div className="flex-1">
                     <h3 className="text-2xl mb-1 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>{product.title}</h3>
                     <p className="text-gray-400">{product.description}</p>
