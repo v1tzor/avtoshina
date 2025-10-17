@@ -1,81 +1,11 @@
 import {
   Wrench,
-  Droplets,
-  Settings,
   CheckCircle,
   Shield,
   Clock,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-
-const services = [
-  {
-    icon: Settings,
-    title: "Шиномонтаж любой сложности",
-    description:
-      "Профессиональный шиномонтаж для легковых и грузовых автомобилей",
-    features: [
-      "Монтаж и демонтаж шин",
-      "Балансировка колес",
-      "Ремонт проколов и порезов",
-      "Установка и снятие колес",
-      "Проверка давления и подкачка",
-    ],
-  },
-  {
-    icon: Wrench,
-    title: "Раскатка стальных дисков",
-    description: "Восстановление геометрии стальных дисков после деформации",
-    features: [
-      "Правка дисков после ударов",
-      "Устранение восьмерки",
-      "Выправление вмятин",
-      "Восстановление биения",
-      "Проверка на специальном оборудовании",
-    ],
-  },
-  {
-    icon: Droplets,
-    title: "Экспресс замена масла",
-    description: "Быстрая замена масла и технических жидкостей",
-    features: [
-      "Замена моторного масла",
-      "Замена масляного фильтра",
-      "Замена воздушного фильтра",
-      "Долив технических жидкостей",
-      "Проверка уровня жидкостей",
-    ],
-  },
-];
 
 export function Goods() {
-  const [visibleItems, setVisibleItems] = useState<boolean[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(
-              entry.target.getAttribute("data-index") || "0"
-            );
-            setVisibleItems((prev) => {
-              const newState = [...prev];
-              newState[index] = true;
-              return newState;
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".service-card");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="services" className="py-20 relative overflow-hidden bg-blue-900/20">
       
