@@ -39,7 +39,7 @@ export function Hero() {
           <p 
             className={`text-lg md:text-xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            Профессиональный сервис, качественные шины и диски, быстрый ремонт. Работаем для вашей безопасности на дороге.
+            Профессиональный сервис, качественные шины и диски, быстрый ремонт в городе Россошь
           </p>
           
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
