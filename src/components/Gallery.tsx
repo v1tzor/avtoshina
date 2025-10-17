@@ -22,7 +22,7 @@ export function Gallery() {
       {/* Decorative gradient orbs */}
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gray-800/8 rounded-full blur-3xl"></div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-gray-950"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">

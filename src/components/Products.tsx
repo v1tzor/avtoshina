@@ -57,7 +57,7 @@ export function Products() {
   return (
     <section id="products" className="py-20 relative overflow-hidden">
       
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950 to-gray-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">

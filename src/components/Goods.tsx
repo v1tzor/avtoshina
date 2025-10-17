@@ -63,7 +63,7 @@ export function Goods() {
   return (
     <section id="why-us" className="py-24 relative overflow-hidden">
 
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950 to-gray-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
 
       {/* Decorative gradient orbs */}
       <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-blue-900/6 rounded-full blur-3xl"></div>
