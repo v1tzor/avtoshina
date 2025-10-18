@@ -37,7 +37,7 @@ export function Contacts() {
                   </div>
                   <div>
                     <p className="mb-2">Магазин:</p>
-                    <p className="text-gray-400 mb-2">г. Россошь, пл. Октябрьская площадь, 3Б</p>
+                    <p className="text-gray-400 mb-2">г. Россошь, пл. Октябрьская, 3Б</p>
                     <a
                       href="https://yandex.ru/maps/-/CLRZ4LYv"
                       target="_blank"

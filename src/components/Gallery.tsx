@@ -33,16 +33,6 @@ export function Gallery() {
             Фотографии наших объектов и оборудования
           </p>
         </div>
-        {/* <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800 }}>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Наша работа
-            </span>
-          </h2>
-          <p className="text-lg text-gray-500">
-            Фотографии наших объектов и оборудования
-          </p>
-        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {galleryImages.map((image, index) => (
