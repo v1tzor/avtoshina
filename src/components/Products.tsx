@@ -1,4 +1,4 @@
-import { Gauge, Disc, Battery, Droplet, ArrowUpRight } from "lucide-react";
+import { Gauge, Disc, Battery, Droplet } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const products = [

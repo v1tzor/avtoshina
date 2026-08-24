@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const services = [
