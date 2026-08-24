@@ -21,58 +21,49 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 py-4 lg:px-8 lg:py-6 ${isScrolled ? 'pt-4' : ''}`}>
+      <div className={`mx-auto max-w-7xl transition-all duration-500 ease-in-out ${isScrolled ? 'glass rounded-3xl px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/10' : 'px-2'}`}>
         <div className="flex items-center justify-between">
-         {/* Logo + Название */}
-        <div className="flex items-center gap-3 transform transition-all duration-500 hover:scale-105 cursor-pointer" onClick={() => scrollToSection("home")}>
-          <div className="w-12 h-12">
+         {/* Logo */}
+        <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection("home")}>
+          <div className="w-10 h-10 opacity-90 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110">
             <ImageWithFallback
               src="/avtoshina-logo.png"
               alt="Автошина Logo"
-              className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
+              className="w-full h-full object-contain grayscale invert opacity-90"
             />
           </div>
-          <span className="text-xl tracking-wider text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800 }}>
-            АВТОШИНА<span className="text-cyan-500">36</span>
+          <span className="text-xl tracking-wider text-white uppercase" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+            Автошина
           </span>
         </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-            >
+          <nav className="hidden lg:flex items-center gap-8">
+            <button onClick={() => scrollToSection("home")} className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group">
               Главная
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-            >
+            <button onClick={() => scrollToSection("products")} className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group">
               Ассортимент
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-            >
+            <button onClick={() => scrollToSection("services")} className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group">
               Услуги
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("gallery")}
-              className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-            >
-              Фото
+            <button onClick={() => scrollToSection("why-us")} className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group">
+              Преимущества
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("contacts")}
-              className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-            >
+            <button onClick={() => scrollToSection("contacts")} className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group">
               Контакты
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </button>
+            
             <a 
               href="tel:+79204281777"
-              className="px-5 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-semibold text-sm hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300"
+              className="glass-button px-6 py-2.5 rounded-full text-white font-semibold text-sm ml-4 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
             >
               +7 (920) 428-17-77
             </a>
@@ -80,51 +71,27 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 p-2 hover:bg-white/5 rounded-xl transition-all duration-300"
+            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="md:hidden mt-4 pt-4 border-t border-white/5 flex flex-col gap-2 pb-4 animate-fade-in-up">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-left py-3 px-4 hover:bg-white/5 rounded-xl transition-colors text-gray-300 hover:text-cyan-400"
-            >
-              Главная
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="text-left py-3 px-4 hover:bg-white/5 rounded-xl transition-colors text-gray-300 hover:text-cyan-400"
-            >
-              Ассортимент
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-left py-3 px-4 hover:bg-white/5 rounded-xl transition-colors text-gray-300 hover:text-cyan-400"
-            >
-              Услуги
-            </button>
-            <button
-              onClick={() => scrollToSection("gallery")}
-              className="text-left py-3 px-4 hover:bg-white/5 rounded-xl transition-colors text-gray-300 hover:text-cyan-400"
-            >
-              Фото
-            </button>
-            <button
-              onClick={() => scrollToSection("contacts")}
-              className="text-left py-3 px-4 hover:bg-white/5 rounded-xl transition-colors text-gray-300 hover:text-cyan-400"
-            >
-              Контакты
-            </button>
+          <nav className="lg:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-2 pb-4 animate-fade-in">
+            <button onClick={() => scrollToSection("home")} className="text-left py-3 px-4 rounded-xl text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Главная</button>
+            <button onClick={() => scrollToSection("products")} className="text-left py-3 px-4 rounded-xl text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Ассортимент</button>
+            <button onClick={() => scrollToSection("services")} className="text-left py-3 px-4 rounded-xl text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Услуги</button>
+            <button onClick={() => scrollToSection("why-us")} className="text-left py-3 px-4 rounded-xl text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Преимущества</button>
+            <button onClick={() => scrollToSection("contacts")} className="text-left py-3 px-4 rounded-xl text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Контакты</button>
+            
             <a 
               href="tel:+79204281777"
-              className="mt-2 flex items-center justify-center py-3 px-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-semibold text-sm"
+              className="glass-button mt-4 flex items-center justify-center py-4 rounded-xl text-white font-semibold text-lg"
             >
-              Позвонить +7 (920) 428-17-77
+              Позвонить
             </a>
           </nav>
         )}

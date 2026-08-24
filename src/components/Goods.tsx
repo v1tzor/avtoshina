@@ -1,36 +1,29 @@
-import { Award, Clock, Shield, ThumbsUp, Users, Wrench } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const reasons = [
   {
-    icon: Award,
-    title: "Профессионализм",
-    description: "Больше 10 лет на рынке"
+    title: "ПРОФЕССИОНАЛИЗМ",
+    description: "Более 10 лет на рынке. Опыт, который гарантирует безупречный результат."
   },
   {
-    icon: Clock,
-    title: "Быстрое обслуживание",
-    description: "Минимальное время ожидания, оперативная работа"
+    title: "СКОРОСТЬ",
+    description: "Оптимизированные процессы. Мы ценим ваше время без ущерба качеству."
   },
   {
-    icon: Shield,
-    title: "Гарантия качества",
-    description: "Гарантия на все виды выполненных работ"
+    title: "ГАРАНТИЯ",
+    description: "Полная ответственность за каждый этап работы. Честно и надежно."
   },
   {
-    icon: ThumbsUp,
-    title: "Честные цены",
-    description: "Прозрачное ценообразование без скрытых платежей"
+    title: "ПРОЗРАЧНОСТЬ",
+    description: "Абсолютно понятное ценообразование. Никаких скрытых платежей."
   },
   {
-    icon: Wrench,
-    title: "Современное оборудование",
-    description: "Новейшее оборудование для качественной работы"
+    title: "ТЕХНОЛОГИИ",
+    description: "Только передовое оборудование для обслуживания премиум-класса."
   },
   {
-    icon: Users,
-    title: "Индивидуальный подход",
-    description: "Персональное обслуживание каждого клиента"
+    title: "ПОДХОД",
+    description: "Индивидуальный сервис для каждого клиента. Мы слышим ваши пожелания."
   }
 ];
 
@@ -61,51 +54,38 @@ export function Goods() {
   }, []);
 
   return (
-    <section id="why-us" className="py-24 relative overflow-hidden">
+    <section id="why-us" className="py-32 relative bg-transparent">
 
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
-
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-blue-900/6 rounded-full blur-3xl"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-             Почему выбирают нас
-          </h2>
-          <p className="text-xl text-blue-500">
-              Мы заботимся о вашей безопасности и комфорте
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20 animate-fade-in-up">
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl tracking-tighter text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+              ПОЧЕМУ МЫ
+            </h2>
+          </div>
+          <p className="text-lg text-gray-500 font-light max-w-md leading-relaxed">
+            Мы не просто выполняем работу, мы устанавливаем стандарты сервиса в городе.
           </p>
         </div>
-        {/* <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800 }}>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Почему выбирают нас
-            </span>
-          </h2>
-          <p className="text-lg text-gray-500">
-            Мы заботимся о вашей безопасности и комфорте
-          </p>
-        </div> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
           {reasons.map((reason, index) => {
-            const Icon = reason.icon;
             return (
               <div
                 key={index}
                 data-index={index}
-                className={`reason-card bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-white/5 rounded-2xl p-6 transition-all duration-500 hover:border-white/20 hover:bg-gray-900/50 ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 80}ms` }}
+                className={`reason-card relative p-10 bg-[#0a0a0a]/80 backdrop-blur-xl rounded-3xl border border-white/5 hover:border-white/15 transition-all duration-700 ease-out shadow-2xl ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-3 bg-gray-900 border border-white/10 rounded-xl mb-4">
-                    <Icon size={28} className="text-blue-400" />
-                  </div>
-                  <h3 className="text-lg mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+                <div className="absolute top-4 right-6 text-6xl font-black text-white/5 select-none pointer-events-none" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  0{index + 1}
+                </div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-xl mb-4 text-white tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}>
                     {reason.title}
                   </h3>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-400 text-base leading-relaxed font-light">
                     {reason.description}
                   </p>
                 </div>

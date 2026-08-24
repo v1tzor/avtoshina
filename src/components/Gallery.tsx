@@ -17,46 +17,42 @@ const galleryImages = [
 
 export function Gallery() {
   return (
-    <section id = "gallery" className="py-24 relative overflow-hidden">
-
-      {/* Decorative gradient orbs */}
-      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gray-800/8 rounded-full blur-3xl"></div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-gray-950"></div>
+    <section id="gallery" className="py-32 relative bg-transparent">
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-            Наша работа
-          </h2>
-          <p className="text-xl text-blue-500">
-            Фотографии наших объектов и оборудования
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20 animate-fade-in-up">
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl tracking-tighter text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+              ГАЛЕРЕЯ
+            </h2>
+          </div>
+          <p className="text-lg text-gray-500 font-light max-w-md leading-relaxed">
+            Наши стандарты качества в каждой детали. От идеальной чистоты до высокоточного оборудования.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
           {galleryImages.map((image, index) => (
             <div 
               key={index}
-              className="relative overflow-hidden rounded-2xl border border-white/5 group transition-all duration-300 hover:border-white/20"
+              className="relative overflow-hidden group rounded-3xl border border-white/5 hover:border-white/15 shadow-2xl transition-all duration-500"
               style={{
-                animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
+                animationDelay: `${index * 150}ms`,
+                animation: 'fadeInUp 0.8s ease-out forwards'
               }}
             >
-              <div className="aspect-[4/3]">
+              <div className="aspect-[4/5] bg-black">
                 <ImageWithFallback
                   src={image.url}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-1000 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white text-sm" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-                    {image.title}
-                  </p>
-                </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <p className="text-white text-lg tracking-wide font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  {image.title}
+                </p>
               </div>
             </div>
           ))}

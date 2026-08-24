@@ -11,189 +11,150 @@ const trackGA4Event = (eventName: string, parameters?: Record<string, string | n
 
 export function Contacts() {
   return (
-    <section id="contacts" className="py-20 relative overflow-hidden">
+    <section id="contacts" className="py-20 md:py-32 relative bg-transparent">
       
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl mb-4 text-blue-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-            Контакты
-          </h2>
-          <p className="text-xl text-blue-500">
-            Свяжитесь с нами удобным способом
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-10 mb-12 md:mb-20 animate-fade-in-up">
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl tracking-tighter text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+              КОНТАКТЫ
+            </h2>
+          </div>
+          <p className="text-base sm:text-lg text-gray-400 font-light max-w-md leading-relaxed">
+            Мы всегда на связи. Выберите удобный способ связи или приезжайте в один из наших сервисных центров.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Addresses */}
-            <div className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-600 rounded-3xl p-8 transition-all duration-500 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-blue-500/20 animate-slide-in-left">
-              <h3 className="text-2xl mb-6 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}>Наши адреса</h3>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-800/30 transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex-shrink-0 shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                    <MapPin size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="mb-2">Магазин:</p>
-                    <p className="text-gray-400 mb-2">г. Россошь, пл. Октябрьская, 3Б</p>
-                    <a
-                      href="https://yandex.ru/maps/-/CLRZ4LYv"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 transition-all duration-300 inline-flex items-center gap-1 hover:gap-2"
-                      onClick={() => trackGA4Event('map_click', {
-                        location: 'магазин',
-                        map_service: 'yandex_maps',
-                        address: 'г. Россошь, пл. Октябрьская площадь, 3Б'
-                      })}
-                    >
-                      Показать на карте
-                      <MapPin size={16} />
-                    </a>
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          
+          {/* Contact Info */}
+          <div className="p-6 sm:p-8 md:p-10 lg:p-14 glass-panel rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-all duration-700 shadow-2xl flex flex-col justify-between group">
+            <div>
+              <p className="text-[10px] sm:text-xs tracking-[0.2em] text-gray-500 uppercase mb-6 sm:mb-8">Прямая связь</p>
+              
+              <div className="space-y-8 sm:space-y-12">
+                <div>
+                  <p className="text-xs sm:text-sm text-gray-400 font-light mb-2 flex items-center gap-2"><User size={14}/>Телефон (Андрей)</p>
+                  <a
+                    href="tel:+79204281777"
+                    className="text-2xl sm:text-3xl md:text-4xl text-white tracking-tight hover:text-gray-300 transition-colors inline-block text-gradient"
+                    style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}
+                    onClick={() => trackGA4Event('contact_click', {
+                      contact_type: 'phone',
+                      phone_number: '+79204281777',
+                      contact_name: 'Андрей'
+                    })}
+                  >
+                    +7 (920) 428-17-77
+                  </a>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-800/30 transition-all duration-300 group">
-                  <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex-shrink-0 shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                    <MapPin size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="mb-2">Шинсервис:</p>
-                    <p className="text-gray-400 mb-2">г. Россошь, ул. Январская, д. 43</p>
-                    <a
-                      href="https://yandex.ru/maps/-/CLRVzBZ3"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 transition-all duration-300 inline-flex items-center gap-1 hover:gap-2"
-                      onClick={() => trackGA4Event('map_click', {
-                        location: 'шинсервис', 
-                        map_service: 'yandex_maps',
-                        address: 'г. Россошь, ул. Январская, д. 43'
-                      })}
-                    >
-                      Показать на карте
-                      <MapPin size={16} />
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-xs sm:text-sm text-gray-400 font-light mb-2 flex items-center gap-2"><User size={14}/>Куратор</p>
+                  <a
+                    href="https://t.me/So_sofia_So"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg sm:text-xl md:text-2xl text-white tracking-tight hover:text-gray-300 transition-colors inline-block pb-1 font-medium"
+                    onClick={() => trackGA4Event('social_click', {
+                      social_platform: 'telegram',
+                      username: 'So_sofia_So',
+                      role: 'куратор'
+                    })}
+                  >
+                    @So_sofia_So
+                  </a>
                 </div>
-              </div>
-            </div>
 
-            {/* Contact Info */}
-            <div className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-600 rounded-3xl p-8 transition-all duration-500 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-blue-500/20 animate-slide-in-right">
-              <h3 className="text-2xl mb-6 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}>Связь с нами</h3>
-              <div className="space-y-4">
-                <a
-                  href="tel:+79204281777"
-                  className="flex items-center gap-4 p-4 bg-gray-800/30 hover:bg-gray-800/50 rounded-2xl transition-all duration-300 group hover:translate-x-2"
-                  onClick={() => trackGA4Event('contact_click', {
-                    contact_type: 'phone',
-                    phone_number: '+79204281777',
-                    contact_name: 'Андрей'
-                  })}
-                >
-                  <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                    <Phone size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Телефон</p>
-                    <p className="text-blue-300 group-hover:text-blue-200 transition-colors">+7 (920) 428-17-77 — Андрей</p>
-                  </div>
-                </a>
-
-                <a
-                  href="mailto:sulimavto@yandex.ru"
-                  className="flex items-center gap-4 p-4 bg-gray-800/30 hover:bg-gray-800/50 rounded-2xl transition-all duration-300 group hover:translate-x-2"
-                  onClick={() => trackGA4Event('contact_click', {
-                    contact_type: 'email',
-                    email: 'sulimavto@yandex.ru'
-                  })}
-                >
-                  <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg shadow-blue-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                    <Mail size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Email</p>
-                    <p className="text-blue-300 group-hover:text-blue-200 transition-colors">sulimavto@yandex.ru</p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-2xl transition-all duration-300 hover:bg-gray-800/50">
-                  <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg shadow-blue-500/30">
-                    <User size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Куратор</p>
-                    <a
-                      href="https://t.me/So_sofia_So"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-300 hover:text-blue-200 transition-colors"
-                      onClick={() => trackGA4Event('social_click', {
-                        social_platform: 'telegram',
-                        username: 'So_sofia_So',
-                        role: 'куратор'
-                      })}
-                    >
-                      @So_sofia_So
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-xs sm:text-sm text-gray-400 font-light mb-2 flex items-center gap-2"><Mail size={14}/>Email</p>
+                  <a
+                    href="mailto:sulimavto@yandex.ru"
+                    className="text-base sm:text-lg md:text-xl text-white hover:text-gray-300 transition-colors font-medium break-all"
+                    onClick={() => trackGA4Event('contact_click', {
+                      contact_type: 'email',
+                      email: 'sulimavto@yandex.ru'
+                    })}
+                  >
+                    sulimavto@yandex.ru
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-600 rounded-3xl p-8 transition-all duration-500 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-blue-500/20 animate-scale-in">
-            <h3 className="text-2xl mb-6 text-center text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}>Мы в социальных сетях</h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            
+            <div className="mt-12 sm:mt-16 flex gap-4 sm:gap-6">
               <a
                 href="https://vk.com/away.php?to=https%3A%2F%2Ft.me%2Favtoshina_rsh&utf=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50"
-                onClick={() => trackGA4Event('social_click', {
-                  social_platform: 'telegram',
-                  link_type: 'channel'
-                })}
+                className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:scale-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all"
+                onClick={() => trackGA4Event('social_click', { social_platform: 'telegram', link_type: 'channel' })}
               >
-                <Send size={20} />
-                <span>Telegram</span>
+                <Send size={18} strokeWidth={1.5} />
               </a>
-
               <a
                 href="https://vk.com/club229635905"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50"
-                onClick={() => trackGA4Event('social_click', {
-                  social_platform: 'vkontakte',
-                  link_type: 'group'
-                })}
+                className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:scale-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all"
+                onClick={() => trackGA4Event('social_click', { social_platform: 'vkontakte', link_type: 'group' })}
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1.025-1.49-1.163-1.744-1.163-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.27.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/>
                 </svg>
-                <span>VK</span>
-              </a>
-
-              <a
-                href="https://yandex.ru/maps/-/CLRVzBZ3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50"
-                onClick={() => trackGA4Event('map_click', {
-                  location: 'яндекс_карты_соц',
-                  map_service: 'yandex_maps'
-                })}
-              >
-                <MapPin size={20} />
-                <span>Yandex Maps</span>
               </a>
             </div>
           </div>
+
+          {/* Addresses */}
+          <div className="p-6 sm:p-8 md:p-10 lg:p-14 glass-panel rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-all duration-700 shadow-2xl">
+            <p className="text-[10px] sm:text-xs tracking-[0.2em] text-gray-500 uppercase mb-6 sm:mb-8">Локации</p>
+            
+            <div className="space-y-10 sm:space-y-16">
+              <div className="group">
+                <h3 className="text-xl sm:text-2xl text-white tracking-tight mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+                  Магазин
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 font-light mb-4 sm:mb-6 flex items-center gap-2"><MapPin size={14} className="sm:w-4 sm:h-4"/>г. Россошь, пл. Октябрьская, 3Б</p>
+                <a
+                  href="https://yandex.ru/maps/-/CLRZ4LYv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-button w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium hover:bg-white hover:text-black transition-all"
+                  onClick={() => trackGA4Event('map_click', {
+                    location: 'магазин',
+                    map_service: 'yandex_maps',
+                    address: 'г. Россошь, пл. Октябрьская площадь, 3Б'
+                  })}
+                >
+                  Открыть в Картах
+                  <MapPin size={14} className="sm:w-4 sm:h-4" />
+                </a>
+              </div>
+
+              <div className="group">
+                <h3 className="text-xl sm:text-2xl text-white tracking-tight mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+                  Шинсервис
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 font-light mb-4 sm:mb-6 flex items-center gap-2"><MapPin size={14} className="sm:w-4 sm:h-4"/>г. Россошь, ул. Январская, д. 43</p>
+                <a
+                  href="https://yandex.ru/maps/-/CLRVzBZ3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-button w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-3 px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium hover:bg-white hover:text-black transition-all"
+                  onClick={() => trackGA4Event('map_click', {
+                    location: 'шинсервис', 
+                    map_service: 'yandex_maps',
+                    address: 'г. Россошь, ул. Январская, д. 43'
+                  })}
+                >
+                  Открыть в Картах
+                  <MapPin size={14} className="sm:w-4 sm:h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
