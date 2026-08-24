@@ -24,7 +24,7 @@ export function CanvasWaves() {
       const height = canvas.height;
 
       // Match the body background color perfectly to avoid black bars
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#080808';
       ctx.fillRect(0, 0, width, height);
 
       const lines = 5;
@@ -47,17 +47,17 @@ export function CanvasWaves() {
         ctx.lineTo(0, height);
         ctx.closePath();
 
-        // Soft white fill for the wave body
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.01 + i * 0.005})`;
+        // Soft white fill for the wave body (even more subtle)
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.005 + i * 0.003})`;
         ctx.fill();
 
-        // Crisp elegant top edge line
-        ctx.strokeStyle = `rgba(255, 255, 255, ${0.03 + i * 0.02})`;
+        // Crisp elegant top edge line (subtle)
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.02 + i * 0.015})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      time += 0.008; // Increased speed for better mobile visibility
+      time += 0.004; // Reduced speed for a calmer background
       animationFrameId = requestAnimationFrame(draw);
     };
 
