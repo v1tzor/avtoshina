@@ -55,17 +55,18 @@ export function Products() {
   }, []);
 
   return (
-    <section id="products" className="py-20 relative overflow-hidden">
+    <section id="products" className="py-24 relative overflow-hidden bg-[#050505]">
       
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black to-gray-950"></div>
-      
+      {/* Background accents */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-6xl mb-6 tracking-tight text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
             Ассортимент
           </h2>
-          <p className="text-xl text-blue-500">
-            Качественная продукция для вашего автомобиля
+          <p className="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">
+            Оригинальная продукция от проверенных брендов для долгой службы вашего автомобиля.
           </p>
         </div>
 
@@ -76,24 +77,26 @@ export function Products() {
               <div
                 key={index}
                 data-index={index}
-                className={`product-card bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-600 rounded-3xl p-8 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-blue-500/20 ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                className={`product-card group relative bg-white/5 border border-white/10 hover:border-cyan-500/50 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(34,211,238,0.1)] overflow-hidden ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-xl">
-                      <Icon size={28} className="text-blue-400" />
-                    </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl mb-1 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>{product.title}</h3>
-                    <p className="text-gray-400">{product.description}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                
+                <div className="flex items-start gap-5 mb-6 relative z-10">
+                  <div className="p-4 bg-cyan-950/40 border border-cyan-500/20 rounded-2xl group-hover:bg-cyan-500/10 transition-colors duration-500">
+                    <Icon size={28} className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-500" />
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <h3 className="text-2xl mb-2 text-white font-semibold tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>{product.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed font-light">{product.description}</p>
                   </div>
                 </div>
                 
-                <ul className="space-y-3 ml-16">
+                <ul className="space-y-3 ml-[72px] mt-6 relative z-10">
                   {product.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-300 transition-all duration-300 hover:text-blue-300 hover:translate-x-2">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
-                      {item}
+                    <li key={i} className="flex items-center gap-3 text-sm text-gray-300 group/item hover:text-white transition-colors">
+                      <div className="w-1.5 h-1.5 bg-cyan-500/50 rounded-full group-hover/item:bg-cyan-400 group-hover/item:shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-all"></div>
+                      <span className="font-light">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -105,3 +108,4 @@ export function Products() {
     </section>
   );
 }
+

@@ -67,17 +67,18 @@ export function Services() {
   }, []);
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden">
-      
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950 to-gray-950"></div>
+    <section id="services" className="py-24 relative overflow-hidden bg-[#050505]">
+
+      {/* Background accents */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl mb-4 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-6xl mb-6 tracking-tight text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
             Наши услуги
           </h2>
-          <p className="text-xl text-blue-500">
-            Профессиональное обслуживание вашего автомобиля
+          <p className="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">
+            Профессиональное обслуживание вашего автомобиля с гарантией качества и скорости.
           </p>
         </div>
 
@@ -88,22 +89,24 @@ export function Services() {
               <div
                 key={index}
                 data-index={index}
-                className={`service-card bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-600 rounded-3xl p-8 h-full transition-all duration-500 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-blue-500/20 ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`service-card group relative bg-white/5 border border-white/10 hover:border-cyan-500/50 backdrop-blur-md rounded-3xl p-8 h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(34,211,238,0.1)] overflow-hidden ${visibleItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="flex flex-col items-center text-center mb-6">
-                  <div className="p-4 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-xl mb-4">
-                    <Icon size={40} className="text-blue-400" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div className="flex flex-col items-center text-center mb-8 relative z-10">
+                  <div className="p-5 bg-cyan-950/40 border border-cyan-500/20 rounded-2xl group-hover:bg-cyan-500/10 transition-colors duration-500 mb-6">
+                    <Icon size={40} className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-500" />
                   </div>
-                  <h3 className="text-2xl mb-3 text-white" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>{service.title}</h3>
-                  <p className="text-gray-400">{service.description}</p>
+                  <h3 className="text-2xl mb-3 text-white font-semibold tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>{service.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">{service.description}</p>
                 </div>
                 
-                <ul className="space-y-3">
+                <ul className="space-y-3 mt-4 text-left w-full relative z-10">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-300 transition-all duration-300 hover:text-blue-300 hover:translate-x-2">
-                      <div className="mt-1.5 w-2 h-2 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex-shrink-0"></div>
-                      <span>{feature}</span>
+                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300 group/item hover:text-white transition-colors">
+                      <div className="mt-1.5 w-1.5 h-1.5 bg-cyan-500/50 rounded-full flex-shrink-0 group-hover/item:bg-cyan-400 group-hover/item:shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-all"></div>
+                      <span className="font-light">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,3 +118,4 @@ export function Services() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function Hero() {
@@ -11,54 +11,65 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 bg-[#050505]"
     >
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-black to-blue-900"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-blue-400/20"></div>
+      {/* Sleek Neon Background Accent */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
       
-      {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      {/* Subtle grid pattern for texture */}
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-           <h1 
-            className={`text-4xl md:text-6xl lg:text-7xl mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800 }}
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+        <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
+          
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-sm font-semibold mb-8 backdrop-blur-md transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+            </span>
+            Работаем для вас в Россоши
+          </div>
+
+          <h1 
+            className={`text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, lineHeight: 1.1 }}
           >
-            <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+            <span className="text-white drop-shadow-lg">
               Продажа и ремонт
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 filter drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]">
               шин и дисков
             </span>
           </h1>
+          
           <p 
-            className={`text-lg md:text-xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`text-lg md:text-2xl mb-12 text-gray-400 max-w-2xl mx-auto font-light transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            Профессиональный сервис, качественные шины и диски, быстрый ремонт в городе Россошь
+            Профессиональный шиномонтаж, точная балансировка и огромный выбор качественных шин для вашего автомобиля.
           </p>
           
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`flex flex-col sm:flex-row gap-5 justify-center items-center w-full transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <a
               href="tel:+79204281777"
-              className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/50"
+              className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-cyan-500 text-slate-950 font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]"
             >
-              <Phone size={20} className="transition-transform duration-300 group-hover:rotate-12" />
-              Позвонить
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+              <Phone size={22} className="relative z-10" />
+              <span className="relative z-10">Позвонить сейчас</span>
             </a>
+            
             <button
               onClick={() => {
                 const element = document.getElementById("contacts");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group inline-flex items-center gap-2 border-2 border-blue-500 hover:bg-blue-500/20 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
+              className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 text-white font-medium text-lg backdrop-blur-md transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
             >
-              <MapPin size={20} className="transition-transform duration-300 group-hover:bounce" />
-              Наши адреса
+              <MapPin size={22} className="text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+              <span>Наши адреса</span>
+              <ChevronRight size={18} className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
             </button>
           </div>
         </div>
