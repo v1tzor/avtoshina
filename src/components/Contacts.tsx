@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Send, User } from "lucide-react";
+import { Mail, MapPin, Send, User } from "lucide-react";
 import ReactGA from 'react-ga4';
 
 const trackGA4Event = (eventName: string, parameters?: Record<string, string | number | boolean>) => {
