@@ -23,7 +23,7 @@ export function CanvasWaves() {
       const width = canvas.width;
       const height = canvas.height;
 
-      // Pure black background
+      // Match the body background color perfectly to avoid black bars
       ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, width, height);
 
@@ -57,7 +57,7 @@ export function CanvasWaves() {
         ctx.stroke();
       }
 
-      time += 0.003; // Extremely slow, elegant motion
+      time += 0.008; // Increased speed for better mobile visibility
       animationFrameId = requestAnimationFrame(draw);
     };
 

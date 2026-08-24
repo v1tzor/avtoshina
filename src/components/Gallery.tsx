@@ -45,7 +45,7 @@ export function Gallery() {
                 <ImageWithFallback
                   src={image.url}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-all duration-1000 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                 />
               </div>
               

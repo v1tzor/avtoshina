@@ -21,8 +21,8 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 py-4 lg:px-8 lg:py-6 ${isScrolled ? 'pt-4' : ''}`}>
-      <div className={`mx-auto max-w-7xl transition-all duration-500 ease-in-out ${isScrolled ? 'glass rounded-3xl px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/10' : 'px-2'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 py-4 lg:px-8 lg:py-6 ${(isScrolled || isOpen) ? 'pt-4' : ''}`}>
+      <div className={`mx-auto max-w-7xl transition-all duration-500 ease-in-out ${(isScrolled || isOpen) ? 'glass rounded-3xl px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/10' : 'px-2'}`}>
         <div className="flex items-center justify-between">
          {/* Logo */}
         <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection("home")}>
